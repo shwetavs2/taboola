@@ -1,0 +1,49 @@
+Assuming you have a binary tree of integers, come up with an algorithm to serialize and
+deserialize it.
+Assumptions:
+a. Serialization should be to a String and from a String.
+b. There are no cyclic connections in the tree
+
+Model:
+public class Node {
+Node left;
+Node right;
+int num;
+}
+public interface TreeSerializer {
+String serialize(Node root);
+Node deserialize(String str);
+}
+
+I. Implement a TreeSerializer given the above assumptions.
+II. Implement a TreeSerializer that takes into account a “cyclic tree”. Your
+implementation should throw a RuntimeException when a cyclic connection is
+found in the Tree. Bonus: create an implementation that works even with a “cyclic
+tree”. See “cyclic tree” example:
+
+III. Suggest changes that should be done in order to support any data type(as opposed to only an int data type)
+
+ Make the `Node` class and `TreeSerializer` interface generic.
+ Example:
+ 
+ public class Node<T> {
+    Node<T> left;
+    Node<T> right;
+    T data;
+
+    public Node(T data) {
+        this.data = data;
+        this.left = null;
+        this.right = null;
+    }
+}
+
+public interface TreeSerializer<T> {
+    String serialize(Node<T> root);
+    Node<T> deserialize(String str);
+}
+
+
+ also, make changes to `PreorderTreeSerializ`, `CyclicSerializer` and `WithCyclicTree`
+ change type of serialize and deseralize methods.  
+

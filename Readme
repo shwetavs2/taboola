@@ -1,0 +1,20 @@
+ 
+ product_details.sql
+
+ Design three MySQL tables to store information about:
+a. product: the “product” tables should include the name, category of the product; it
+should also provide information to tell us when this product was added to the
+table, and who added this product.
+b. product price: this table will store the current price information of each product
+and we should be able to join it with the product table. It should include the price,
+current discount percent(default to 0), the updated time and who updated it.
+c. product price change log: this table will store the old and new value of the
+“product price” table that’s impacted by any insert/update/delete and contains
+information of who and when the operation was performed.
+Please list the table creation scripts in proper MySQL syntax for these three tables and a
+query to join “product” table and “product price” table together to show the product name,
+category, price, and who/when it gets updated.
+
+
+
+JSONParser.java file is JSON parser that accepts an input JSON string and produces a Map output structure.
